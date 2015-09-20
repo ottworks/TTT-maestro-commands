@@ -4,7 +4,7 @@
 ## Commands
 | Command | Args | Description |
 |---------|------|-------------|
-| ```ms slaynr``` | ```target(s), rounds(default=1), reason(optional), shouldRemove(default=false)``` | Slays target(s) for given rounds. |
+| ```ms slaynr``` | ```target, rounds(default=1), reason(optional), shouldRemove(default=false)``` | Slays target for given rounds. |
 | ```ms changerole``` | ```target(s), role``` | Sets target(s) to given role. |
 | ```ms changerolenr``` | ```target(s), role``` | Sets target(s) to given role next round. |
 | ```ms respawn``` | ```target(s)``` | Respawns target(s). |
@@ -12,7 +12,7 @@
 | ```ms karma``` | ```target(s), karma``` | Sets karma of target(s) to given amount. |
 | ```ms fspec``` | ```target(s), shouldUnspec(default=false)``` | Forces target(s) to spectate mode. |
 | ```ms identify``` | ```target(s), shouldUnidentify(default=false)``` | Identifies target(s)'s body. |
-| ms roundrestart | | Restarts the round. |
+| ```ms roundrestart``` | | Restarts the round. |
 | | | |
 | ```ms credits``` | ```target(s), credits``` | Adds an amount of credits to target(s). |
 | | | |

@@ -1,5 +1,3 @@
-if GAMEMODE_NAME ~= "terrortown" then return end -- todo: test
-
 -- voteslaynr
 maestro.command("voteslaynr", {"player:target", "string:reason(optional)"}, function(caller, targets, reason)
 	if #targets < 1 then
