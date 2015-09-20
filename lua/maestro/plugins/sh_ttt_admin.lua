@@ -5,7 +5,8 @@ maestro.command("slaynr", {"player:target", "number:rounds(optional)", "string:r
 	if #targets == 0 then return true, "Query matched no players." end
 
 	rounds = rounds or 1
-	if not tonumber(rounds) then return true, "Invalid number of rounds specified." end
+	rounds = tonumber(rounds)
+	if rounds then return true, "Invalid number of rounds specified." end
 
 	reason = reason or ""
 
