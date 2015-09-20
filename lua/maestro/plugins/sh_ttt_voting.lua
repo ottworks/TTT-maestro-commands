@@ -59,6 +59,6 @@ maestro.command("votefspec", {"player:target", "string:reason(optional)"}, funct
 		end
 	end)
 
-	return false, "started a vote to force %1 to spectate" .. (reason and " (\"%2\")" or "")
+	return false, "started a vote to force %1 to spectate mode" .. (reason and " (\"%2\")" or "")
 end, [[Starts a vote to force a player to spectate.]])
 -- end votefspec

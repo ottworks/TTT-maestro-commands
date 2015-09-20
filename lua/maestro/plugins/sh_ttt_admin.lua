@@ -6,7 +6,7 @@ maestro.command("slaynr", {"player:target", "number:rounds(optional)", "string:r
 
 	rounds = rounds or 1
 	rounds = tonumber(rounds)
-	if rounds then return true, "Invalid number of rounds specified." end
+	if not rounds then return true, "Invalid number of rounds specified." end
 
 	reason = reason or ""
 
@@ -319,7 +319,7 @@ maestro.command("fspec", {"player:target", "boolean:shouldUnspec(optional)"}, fu
 	end
 
 	return true, "forced %1 " .. (shouldUnspec and "out of spectate mode" or "to spectate")
-end, [[Forces a player to spectator.]])
+end, [[Forces a player to spectate mode.]])
 -- end fspec
 
 -- identify
