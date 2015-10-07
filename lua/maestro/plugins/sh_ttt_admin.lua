@@ -127,14 +127,12 @@ end)
 -- end slaynr
 
 -- changerole
-local rolestr_expand = {
-	i = "innocent",
-	t = "traitor",
-	d = "detective",
-}
 local str_to_role
 hook.Add("PostGamemodeLoaded", "ttt_maestro_commands_changerole_strtorole", function()
 	str_to_role = {
+		i = ROLE_INNOCENT,
+		t = ROLE_TRAITOR,
+		d = ROLE_DETECTIVE,
 		innocent = ROLE_INNOCENT,
 		traitor = ROLE_TRAITOR,
 		detective = ROLE_DETECTIVE,
@@ -147,7 +145,7 @@ local ttt_credits_starting = GetConVar("ttt_credits_starting")
 maestro.command("changerole", {"player:target", "string:role"}, function(caller, targets, rolestr)
 	if #targets == 0 then return true, "Query matched no players." end
 
-	role = str_to_role[rolestr]
+	local role = str_to_role[rolestr]
 	if not role then return true, "Invalid role specified (use 'traitor', 'innocent', or 'detective')" end
 	if GetRoundState() ~= ROUND_ACTIVE then return true, "The round isn't active!" end
 
@@ -192,8 +190,7 @@ local rolenr = {}
 maestro.command("changerolenr", {"player:target", "string:role"}, function(caller, targets, rolestr)
 	if #targets == 0 then return true, "Query matched no players." end
 
-	rolestr = rolestr_expand[rolestr]
-	role = str_to_role[rolestr]
+	local role = str_to_role[rolestr]
 	if role == nil then return true, "Invalid role specified (use 'traitor', 'innocent', 'detective', or 'unmark')" end
 
 	for _, target in pairs(targets) do
